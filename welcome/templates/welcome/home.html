@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mail sender</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<ul>
+	{% for sender in senders %}
+		<li>{{sender.name}}</li>
+		<li>{{sender.is_active}}</li>
+	{%endfor%}
+	</ul>
+	<form action="{% url 'execute' %}" method="post">
+		{% csrf_token %}
+		<input type="submit" value="Execute" />
+	</form>
+</body>
+</html>

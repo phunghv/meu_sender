@@ -1,0 +1,8 @@
+{% block content %}
+    <h2>Sender</h2>
+    <ul>
+        {% for sender in object_list %}
+            <li>{{ sender.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
