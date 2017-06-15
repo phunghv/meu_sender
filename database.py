@@ -1,40 +1,27 @@
 #!/usr/bin/python2
 
-from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, Sequence
 from sqlalchemy.orm import sessionmaker
 
-
-engine = create_engine('sqlite:///testdb.sqlite', echo=True)
-Base = declarative_base()
-
-class User(Base):
-	__tablename__ = 'user'
-	
-	id = Column(Integer,Sequence('user_id_seq'), primary_key=True)
-	name = Column(String)
-	fullname = Column(String)
-	password = Column(String)
-
-	def __repr__(self):
-		return "<User(name='%s', fullname='%s', password='%s')>" % (self.name, self.fullname, self.password)
-
-
-
+from db.Config import Base
+from db.Config import engine
+from db.Sender import Sender
+from db.Receiver import Receiver
+from db.Email import Email
 
 def main():
-#	engine = create_engine('sqlite:///:memory:', echo=True)
-#	Base = declarative_base()
-	Base.metadata.create_all(engine)	
-	print User.__table__
-	ed_user = User(name='ed', fullname='Ed Jones', password='edspassword')
-	print ed_user.name
+	Base.metadata.create_all(engine,checkfirst=True)	
+	print Sender.__table__
 	Session = sessionmaker(bind=engine)
 	session = Session()
-	session.add(ed_user)
-	our_user = session.query(User).filter_by(name='ed').first()
-	print our_user
+	for i in range(1,10,1):
+		sender = Sender(email='root@email.com', api_key='Vy2FQzBcheiw6It4pzqraeTvR_LEuQok8TI', status=i)
+		print sender.email	
+		session.add(sender)
+		
+	got_senders = session.query(Sender).filter_by(email='root@email.com')
+	#got_senders = session.query(Sender).all()
+	for s in got_senders:
+		print s
 
 
 if __name__ == '__main__':
