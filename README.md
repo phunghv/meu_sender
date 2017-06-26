@@ -5,6 +5,7 @@ Người gửi mêu
 * http://preshing.com/20130930/double-checked-locking-is-fixed-in-cpp11/
 * http://www.modernescpp.com/index.php/thread-safe-initialization-of-a-singleton
 * http://www.drdobbs.com/cpp/c-and-the-perils-of-double-checked-locki/184405726
+* https://m.blog.naver.com/jjoommnn/130036635345
 
 
 ## References for OpenGL
