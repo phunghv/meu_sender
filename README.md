@@ -6,7 +6,7 @@ Người gửi mêu
 * http://www.modernescpp.com/index.php/thread-safe-initialization-of-a-singleton
 * http://www.drdobbs.com/cpp/c-and-the-perils-of-double-checked-locki/184405726
 * https://m.blog.naver.com/jjoommnn/130036635345
-
+* http://www.cs.wustl.edu/~schmidt/PDF/DC-Locking.pdf
 
 ## References for OpenGL
 * http://www.vietgamedev.net/blog/49/webgl-b%C3%A0i-th%E1%BB%A9-0-init-webgl/
