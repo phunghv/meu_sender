@@ -8,6 +8,7 @@ Người gửi mêu
 * https://m.blog.naver.com/jjoommnn/130036635345
 * http://www.cs.wustl.edu/~schmidt/PDF/DC-Locking.pdf
 * https://www.stdio.vn/articles/read/92/c11-smart-pointers-quan-ly-tai-nguyen
+* http://fivedots.coe.psu.ac.th/~ad/jg/nui055/
 
 ## References for OpenGL
 * http://www.vietgamedev.net/blog/49/webgl-b%C3%A0i-th%E1%BB%A9-0-init-webgl/
